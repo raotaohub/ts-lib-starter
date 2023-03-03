@@ -2,35 +2,36 @@
   "name": "my-ts-lib",
   "version": "0.0.0",
   "description": "My awesome typescript library",
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist"
-  ],
-  "repository": "github:SevenOutman/ts-lib-starter",
   "bugs": {
     "url": "https://github.com/SevenOutman/ts-lib-starter/issues"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "repository": "github:SevenOutman/ts-lib-starter",
+  "license": "MIT",
   "exports": {
     "require": "./dist/index.js",
     "import": "./dist/index.mjs"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build-fast": "tsup src/index.ts --format cjs,esm",
     "build": "pnpm run build-fast -- --dts-resolve",
-    "test": "vitest run",
-    "prepublishOnly": "pnpm run build"
+    "build-fast": "tsup src/index.ts --format cjs,esm",
+    "prepublishOnly": "pnpm run build",
+    "test": "vitest run"
   },
-  "license": "MIT",
   "devDependencies": {
     "@egoist/prettier-config": "1.0.0",
     "prettier": "^2.8.4",
+    "prettier-plugin-packagejson": "^2.4.3",
     "tsup": "6.4.0",
     "typescript": "^4.9.5",
     "vitest": "0.12.6"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
