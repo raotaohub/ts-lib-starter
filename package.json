@@ -8,6 +8,10 @@
   "files": [
     "dist"
   ],
+  "repository": "github:SevenOutman/ts-lib-starter",
+  "bugs": {
+    "url": "https://github.com/SevenOutman/ts-lib-starter/issues"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "exports": {
