@@ -1,1 +1,14 @@
-pnpm-lock.yaml
+# Ignore artifacts:
+bin
+coverage
+node_modules
+build
+dist
+lib
+/.git
+release
+.cache-loader
+.vscode
+.idea
+.yaml
+.yml

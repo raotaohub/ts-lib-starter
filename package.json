@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "description": "My awesome typescript library",
   "bugs": {
-    "url": "https://github.com/SevenOutman/ts-lib-starter/issues"
+    "url": "https://github.com/raotaohub/ts-lib-starter/issues"
   },
-  "repository": "github:SevenOutman/ts-lib-starter",
+  "repository": "github:raotaohub/ts-lib-starter",
   "license": "MIT",
   "exports": {
+    "types": "./dist/index.d.ts",
     "require": "./dist/index.js",
     "import": "./dist/index.mjs"
   },
@@ -15,23 +16,48 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "/dist"
   ],
   "scripts": {
-    "build": "pnpm run build-fast -- --dts-resolve",
-    "build-fast": "tsup src/index.ts --format cjs,esm",
-    "prepublishOnly": "pnpm run build",
-    "test": "vitest run"
+    "dev": "vite",
+    "build": "tsup src/index.ts",
+    "clean": "rimraf node_modules",
+    "format": "prettier --write .",
+    "test": "vitest run --passWithNoTests",
+    "test:coverage": "vitest run --passWithNoTests --coverage",
+    "lint": "npm run lint:ts && npm run lint:js && npm run lint:style",
+    "lint:style": "stylelint ./demo/**/*.css --cache",
+    "lint:ts": "eslint --ext tsx --ext ts src --cache && tsc --noEmit",
+    "lint:js": "eslint --ext js src --cache"
   },
   "devDependencies": {
-    "@egoist/prettier-config": "1.0.0",
-    "prettier": "^2.8.4",
-    "prettier-plugin-packagejson": "^2.4.3",
-    "tsup": "6.4.0",
-    "typescript": "^4.9.5",
-    "vitest": "0.12.6"
+    "@types/react": "^18.2.12",
+    "@types/react-dom": "^16.8.0",
+    "@vitejs/plugin-react": "^2.2.0",
+    "@vitest/coverage-c8": "^0.26.3",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "happy-dom": "^8.1.0",
+    "prettier": "^2.8.8",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "stylelint": "^14.8.5",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^25.0.0",
+    "tsup": "7.0.0",
+    "vitest": "0.32.2",
+    "typescript": "^4.6.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "dependencies": {}
 }

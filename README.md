@@ -23,4 +23,4 @@ npm i my-ts-lib
 
 ## License
 
-MIT &copy; [Doma](https://github.com/SevenOutman)
+MIT &copy; [Doma](https://github.com/raotaohub)
